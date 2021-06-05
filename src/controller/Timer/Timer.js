@@ -1,14 +1,37 @@
 import Countdown from "../Countdown/Countdown.js";
 
 export default class Timer extends Countdown {
-    constructor(minutos, segundos) {
-        super(minutos, segundos);
+    constructor(minutos = 0, segundos = 0) {
+        let timer = document.querySelector('.timer');
+
+        let contador = document.createElement('div');
+        contador.classList.add('timer-clock');
+
+        timer.appendChild(contador);
+
+        super(minutos, segundos, contador);
 
         this.iniciar = this.iniciar.bind(this);
         this.parar = this.parar.bind(this);
 
-        this.timerButton = document.querySelector('.timer-button button');
+        this.criarBotao(timer);
+    }
+
+    criarBotao(timer) {
+        let timerButtonParent = document.createElement('div');
+        let timerButtonClasses = ['btn', 'btn-primary', 'd-flex', 'flex-row', 'justify-content-center', 'align-items-center'];
+        
+        timerButtonParent.classList.add('timer-button');
+
+        this.timerButton = document.createElement("button");
+        this.timerButton.innerHTML = 'Iniciar';
         this.timerButton.addEventListener("click", this.iniciar, false);
+        timerButtonClasses.forEach(classe => {
+            this.timerButton.classList.add(classe);
+        });
+
+        timerButtonParent.appendChild(this.timerButton);
+        timer.appendChild(timerButtonParent);
     }
 
     async iniciar() {

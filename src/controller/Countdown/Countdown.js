@@ -1,9 +1,18 @@
 export default class Countdown {
-    constructor(minutos, segundos) {
+    constructor(minutos = 0, segundos = 0, contador = null) {
         this.minutos = parseInt(minutos);
         this.segundos = parseInt(segundos);
 
-        let contador = document.getElementsByClassName("timer-clock")[0];
+        this.criarContador(contador);
+
+        this.escreverMinutos();
+        this.escreverSegundos();
+    }
+
+    criarContador(contador = null) {
+        if(contador === null) {
+            contador = document.getElementsByClassName("timer-clock")[0];
+        }
         let digito = document.createElement("span");
 
         this.tempo = {
@@ -12,9 +21,6 @@ export default class Countdown {
             segundos: [contador.appendChild(digito.cloneNode()),
                         contador.appendChild(digito.cloneNode())],
         }
-
-        this.escreverMinutos();
-        this.escreverSegundos();
     }
 
     escreverMinutos() {
