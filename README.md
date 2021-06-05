@@ -1,0 +1,30 @@
+# Componente Timer
+
+Sumário
+
+- [Descrição](#descricao)
+- [Execução](#execucao)
+- [Debug](#debug)
+- [Futuro](#futuro)
+
+Este componente foi feito para estudo próprio e testes de como eu poderia criar um componente em JavaScript sem utilizar ReactJS ou NodeJS.
+
+## Descrição <span id="descricao"></span>
+
+O Timer depende do componente Countdown, e este realiza a função de um contador dos minutos e segundos especificados até zero, apresentando a cada segundo a visualização do tempo na tela. Além do Countdown, ele possui um botão de iniciar/parar, bem como o controle total do comportamento deles.
+
+Ao clicar em `Iniciar`, a execução do Timer se inicia, ao mesmo tempo que a opção `Parar` é disponibilizada para interromper este processo a qualquer momento.
+
+## Execução <span id="execucao"></span>
+
+Como não foi utilizado NodeJS, **para executá-lo é necessário que haja um servidor**, seja localhost ou externo, caso contrário haverá problemas no import por conta do CORS que não permite executar sem o `http` ou `https`.
+
+A partir da pasta raiz do projeto, a execução deve ser iniciada em `src/view/index.html`.
+
+## Debug <span id="debug"></span>
+
+Explore os arquivos e edite como quiser.
+
+## Futuro <span id="futuro"></span>
+
+A ideia é reproduzir um componente inteiro em JavaScript, portanto irei trabalhar para que funcione dessa forma, desde que seja a maneira mais enxuta possível.
