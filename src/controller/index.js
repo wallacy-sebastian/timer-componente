@@ -1,3 +1,3 @@
 import Timer from "./Timer/Timer.js";
 
-var timer = new Timer("2", "01");
+var timer = new Timer("1", "03");

@@ -38,40 +38,24 @@ export default class Countdown {
     }
 
     async iniciar() {
-        if(this.segundos <= 0) {
-            if(this.minutos <= 0) {
-                return true;
-            }
-            else {
-                this.segundos = 59;
-                this.minutos--;
-
-                this.escreverMinutos();
-            }
-        }
-        else {
-            this.segundos--;
-        };
-
         return await new Promise(resolve => {
             this.executando = setInterval(() => {
-                this.escreverSegundos();
+                if(this.segundos <= 0 && this.minutos > 0) {
+                    this.segundos = 59;
+                    this.minutos--;
     
-                if(this.segundos <= 0) {
-                    if(this.minutos <= 0) {
-                        resolve(true);
-                        clearInterval(this.executando);
-                    }
-                    else {
-                        this.segundos = 59;
-                        this.minutos--;
-        
-                        this.escreverMinutos();
-                    }
+                    this.escreverMinutos();
                 }
                 else {
                     this.segundos--;
                 };
+
+                this.escreverSegundos();
+
+                if(this.segundos <= 0 && this.minutos <= 0) {
+                    resolve(true);
+                    clearInterval(this.executando);
+                }
             }, 1000);
         });
     }

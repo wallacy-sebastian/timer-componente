@@ -23,7 +23,7 @@ A partir da pasta raiz do projeto, a execução deve ser iniciada em `src/view/i
 
 ## Debug <span id="debug"></span>
 
-Explore os arquivos e edite como quiser.
+Bugs encontrados são reportados em [bugs.md](docs/bugs.md). Lá você encontra a lista de bugs identificados/resolvidos, bem como o link para cada um destes, contendo a descrição de cada.
 
 ## Futuro <span id="futuro"></span>
 
