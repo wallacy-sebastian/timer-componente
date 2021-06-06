@@ -24,7 +24,3 @@ A partir da pasta raiz do projeto, a execução deve ser iniciada em `src/view/i
 ## Debug <span id="debug"></span>
 
 Bugs encontrados são reportados em [Issues](https://github.com/wallacy-sebastian/timer-componente/issues?q=is%3Aopen+is%3Aissue+label%3Abug). Lá você encontra a lista de bugs identificados/resolvidos, bem como o link para cada um destes, contendo a descrição de cada.
-
-## Futuro <span id="futuro"></span>
-
-A ideia é reproduzir um componente inteiro em JavaScript, portanto irei trabalhar para que funcione dessa forma, desde que seja a maneira mais enxuta possível.
