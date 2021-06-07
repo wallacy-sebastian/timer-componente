@@ -38,6 +38,10 @@ export default class Countdown {
     }
 
     async iniciar() {
+        if(this.minutos === 0 && this.segundos === 0) {
+            return true;
+        }
+
         return await new Promise(resolve => {
             this.executando = setInterval(() => {
                 if(this.segundos <= 0 && this.minutos > 0) {
