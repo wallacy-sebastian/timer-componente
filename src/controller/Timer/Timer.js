@@ -15,6 +15,14 @@ export default class Timer extends Countdown {
         this.parar = this.parar.bind(this);
 
         this.criarBotao(timer);
+
+        if (!("Notification" in window)) {
+            console.log("Esse navegador não suporta notificações de desktop");
+        }
+        else {
+            Notification.requestPermission();
+            console.log(Notification.permission);
+        }
     }
 
     criarBotao(timer) {
@@ -64,6 +72,17 @@ export default class Timer extends Countdown {
         this.timerButton.classList.add("btn-primary");
         this.timerButton.removeEventListener("click", this.parar, false);
         this.timerButton.addEventListener("click", this.iniciar, false);
+
+        
+
+        if(this.segundos === 0 && this.minutos === 0) {
+            if(Notification.permission === 'granted') {
+                let notificacao = new Notification(
+                    "Terminou!", {
+                        body: 'O Timer expirou.',
+                        icon: '../../assets/icons/timer.png'});
+            }
+        }
     }
 
 }
