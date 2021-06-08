@@ -80,6 +80,9 @@ export default class Timer extends Countdown {
                     "Terminou!", {
                         body: 'O Timer expirou.',
                         icon: '../../assets/icons/timer.png'});
+
+                let audio = new Audio('/assets/sounds/alarm-clock.mp3');
+                audio.play();
             }
         }
     }
