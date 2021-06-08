@@ -5,7 +5,6 @@ Sumário
 - [Descrição](#descricao)
 - [Execução](#execucao)
 - [Debug](#debug)
-- [Futuro](#futuro)
 
 Este componente foi feito para estudo próprio e testes de como eu poderia criar um componente em JavaScript sem utilizar ReactJS ou NodeJS.
 
