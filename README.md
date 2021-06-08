@@ -19,7 +19,9 @@ Ao clicar em `Iniciar`, a execução do Timer se inicia, ao mesmo tempo que a op
 
 Como não foi utilizado NodeJS, **para executá-lo é necessário que haja um servidor**, seja localhost ou externo, caso contrário haverá problemas no import por conta do CORS que não permite executar sem o `http` ou `https`.
 
-A partir da pasta raiz do projeto, a execução deve ser iniciada em `src/view/index.html`.
+Este projeto foi realizado com a criação de um servidor local. Para criar um, siga os tutoriais [Lamp Stack - Fedora](docs/servidor/lamp-stack-fedora.md) e [Virtual Hosts](docs/servidor/virtual-hosts.md).
+
+A partir da pasta raiz do projeto, a execução deve ser iniciada em `src/index.html`.
 
 ## Debug <span id="debug"></span>
 

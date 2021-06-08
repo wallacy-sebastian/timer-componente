@@ -1,12 +1,12 @@
-import Countdown from "../Countdown/Countdown.js";
+import Countdown from "/controller/Countdown/Countdown.js";
 
 export default class Timer extends Countdown {
     constructor(minutos = 0, segundos = 0) {
         let timer = document.querySelector('.timer');
-
+        
         let contador = document.createElement('div');
         contador.classList.add('timer-clock');
-
+        
         timer.appendChild(contador);
 
         super(minutos, segundos, contador);
@@ -21,7 +21,6 @@ export default class Timer extends Countdown {
         }
         else {
             Notification.requestPermission();
-            console.log(Notification.permission);
         }
     }
 
@@ -84,5 +83,4 @@ export default class Timer extends Countdown {
             }
         }
     }
-
 }
