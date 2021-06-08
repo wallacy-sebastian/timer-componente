@@ -1,8 +1,10 @@
 import Countdown from "/controller/Countdown/Countdown.js";
 
 export default class Timer extends Countdown {
-    constructor(minutos = 0, segundos = 0) {
-        let timer = document.querySelector('.timer');
+    constructor(minutos = 0, segundos = 0, timer = null) {
+        if(timer === null) {
+            timer = document.querySelector('.timer');
+        }
         
         let contador = document.createElement('div');
         contador.classList.add('timer-clock');
