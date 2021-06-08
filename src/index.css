@@ -1,0 +1,8 @@
+@import "/controller/Countdown/style.css";
+@import "/controller/Timer/style.css";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
