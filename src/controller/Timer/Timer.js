@@ -7,7 +7,10 @@ export default class Timer extends Countdown {
         }
         
         let contador = document.createElement('div');
-        contador.classList.add('timer-clock');
+
+        ['timer-clock', 'w-100', 'd-flex', 'justify-content-center'].forEach(classe => {
+            contador.classList.add(classe);
+        });
         
         timer.appendChild(contador);
 
@@ -28,14 +31,16 @@ export default class Timer extends Countdown {
         else {
             Notification.requestPermission();
         }
+
+        this.audioTerminou = new Audio('/assets/sounds/alarm-clock.mp3');
+        this.timerAudio = new Audio('/assets/sounds/clock-ticking.mp3');
+        this.timerAudio.loop = true;
     }
 
     criarBotao(timer) {
         let timerButtonParent = document.createElement('div');
-        let timerButtonClasses = ['btn', 'd-flex', 'flex-row', 'justify-content-center', 'align-items-center'];
-        let timerButtonParentClasses = ['timer-button', 'd-flex', 'flex-row', 'justify-content-around', 'w-100'];
         
-        timerButtonParentClasses.forEach(classe => {
+        ['timer-button', 'd-flex', 'flex-row', 'justify-content-around', 'w-100'].forEach(classe => {
             timerButtonParent.classList.add(classe);
         });
 
@@ -47,7 +52,7 @@ export default class Timer extends Countdown {
         this.timerButtonRestore.innerHTML = 'Restaurar';
         this.timerButtonRestore.addEventListener("click", this.restaurar, false);
 
-        timerButtonClasses.forEach(classe => {
+        ['btn', 'd-flex', 'flex-row', 'justify-content-center', 'align-items-center'].forEach(classe => {
             this.timerButton.classList.add(classe);
             this.timerButtonRestore.classList.add(classe);
         });
@@ -68,6 +73,8 @@ export default class Timer extends Countdown {
         this.timerButton.removeEventListener("click", this.iniciar, false);
         this.timerButton.addEventListener("click", this.parar, false);
         this.timerButtonRestore.disabled = true;
+
+        this.timerAudio.play();
 
         let terminou = await super.iniciar();
 
@@ -94,15 +101,15 @@ export default class Timer extends Countdown {
         this.timerButton.addEventListener("click", this.iniciar, false);
         this.timerButtonRestore.removeAttribute('disabled');
 
+        this.timerAudio.pause();
+
         if(this.segundos === 0 && this.minutos === 0) {
             if(Notification.permission === 'granted') {
                 let notificacao = new Notification(
                     "Terminou!", {
                         body: 'O Timer expirou.',
                         icon: '../../assets/icons/timer.png'});
-
-                let audio = new Audio('/assets/sounds/alarm-clock.mp3');
-                audio.play();
+                this.audioTerminou.play();
             }
         }
     }
