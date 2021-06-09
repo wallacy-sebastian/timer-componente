@@ -6,3 +6,7 @@ html, body {
     padding: 0;
     height: 100%;
 }
+
+.timer {
+    width: 18vw;
+}

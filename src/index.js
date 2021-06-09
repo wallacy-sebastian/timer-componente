@@ -4,6 +4,6 @@ window.onload = function() {
     var elementos = document.getElementsByClassName("timer");
     
     Array.from(elementos).forEach(timer => {
-        new Timer("0", "3", timer);
+        new Timer("1", "3", timer);
     });
 }
