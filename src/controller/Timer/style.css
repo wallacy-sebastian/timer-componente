@@ -1,6 +1,43 @@
 .timer .timer-button button {
-    width: 7vw;
+    width: 7.3vw;
     height: 3vw;
-
     font-size: 1.5vw;
+}
+
+.timer .timer-button button:disabled {
+    opacity: 0.2;
+}
+
+@media (max-width: 1399px) {
+    .timer .timer-button button {
+        width: 7vw;
+        height: 3vw;
+
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 991px) {
+    .timer .timer-button button {
+        width: 9vw;
+        height: 4vw;
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .timer .timer-button button {
+        width: 8vw;
+        height: 3vw;
+        font-size: 1.7vw;
+    }
+}
+
+@media (max-width: 575px) {
+    .timer .timer-button button {
+        width: 12vw;
+        height: 4vw;
+    
+        font-size: 2.5vw;
+    }
 }
